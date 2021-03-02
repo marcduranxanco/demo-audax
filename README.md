@@ -1,12 +1,20 @@
-# Audax Demo
+# AUDAX DEMO
 Demo panel contracts.
 Marc Duran
-## Objectives
+## OBJECTIVES
 
-### Auth Objectives
+### AUTH OBJECTIVES
 :question: Create login page
 :question: Access to the panel when credentials are correct
 :question: Wrong credentials alert when auth fails
+
+#### Creation
+- Using Laravel make:auth as default Bootstrap-based design theme. The ability to register have been removed.
+
+```
+composer require laravel/ui
+php artisan ui bootstrap --auth
+```
 
 ### Database Objectives
 :question: The database must be relacional
@@ -27,6 +35,11 @@ Customer DB table consists of these fields:
 ### Extra objectives
 :question: Bootstrap usage
 
-## About the project
+# Main running commands
+
+`php artisan serve`
+`php artisan key:generate`
+
+# About the project
 
 Project made with Laravel
