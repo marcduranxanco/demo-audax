@@ -1,0 +1,20 @@
+mysql:
+  image: mysql:5.7
+  ports:
+    - "33060:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+  volumes:
+    - "./docker/mysql/scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+    - "./docker/mysql/data:/var/lib/mysql"
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  links:
+    - mysql:db
+  ports:
+    - "8082:80"
+  environment:
+    - PMA_USER=${DB_USERNAME}
+    - PMA_PASSWORD=${DB_PASSWORD}
+    - PHP_UPLOAD_MAX_FILESIZE=100MB

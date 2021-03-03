@@ -14,6 +14,7 @@ Marc Duran
 ```
 composer require laravel/ui
 php artisan ui bootstrap --auth
+php artisan migrate
 ```
 
 ### Database Objectives
@@ -32,6 +33,27 @@ Customer DB table consists of these fields:
     · phone
 ```
 
+Use database migrations to create those schema above:
+```
+php artisan make:migration create_companies_table
+php artisan make:migration create_employees_table
+...
+php artisan migrate
+```
+Model creation:
+```
+php artisan make:model Company
+php artisan make:model Employee
+```
+Seeding the database.
+Use database seeds to create first user with email admin@admin.com and password “password”
+```
+php artisan make:seeder UserAdminSeeder
+...
+php artisan db:seed --class=UserAdminSeeder
+```
+
+
 ### Extra objectives
 :question: Bootstrap usage
 
@@ -43,3 +65,5 @@ Customer DB table consists of these fields:
 # About the project
 
 Project made with Laravel
+
+php artisan migrate
