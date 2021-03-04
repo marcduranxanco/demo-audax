@@ -8,12 +8,14 @@ Marc Duran
 This project was made with Laravel. The database could be created with docker with de Docker-compose file. This fille will create two containers, one with the latest MySQL and another one with phpmyadmin. The ports have to be setted on the .env file. 
 
 ```
-docker-compose up
+docker-compose up -d
+composer install
 php artisan key:generate
 php artisan migrate
 php artisan db:seed --class=UserAdminSeeder
 php artisan db:seed --class=customerSeeder
 php artisan db:seed --class=contractsSeeder
+php artisan serve
 ```
 
 ## OBJECTIVES
