@@ -1,12 +1,27 @@
 # AUDAX DEMO
 Demo panel contracts.
 Marc Duran
+
+
+# About the project
+
+This project was made with Laravel. The database could be created with docker with de Docker-compose file. This fille will create two containers, one with the latest MySQL and another one with phpmyadmin. The ports have to be setted on the .env file. 
+
+```
+docker-compose up
+php artisan key:generate
+php artisan migrate
+php artisan db:seed --class=UserAdminSeeder
+php artisan db:seed --class=customerSeeder
+php artisan db:seed --class=contractsSeeder
+```
+
 ## OBJECTIVES
 
 ### AUTH OBJECTIVES
-:question: Create login page
-:question: Access to the panel when credentials are correct
-:question: Wrong credentials alert when auth fails
+:heavy_check_mark: Create login page
+:heavy_check_mark: Access to the panel when credentials are correct
+:heavy_check_mark: Wrong credentials alert when auth fails
 
 - Using Laravel make:auth as default Bootstrap-based design theme. I've removed the ability to register.
 
@@ -71,17 +86,3 @@ php artisan make:controller ContractsController --resource --model=Contracts
 
 `php artisan key:generate`
 `php artisan serve`
-
-
-# About the project
-
-This project was made with Laravel. The database could be created with docker with de Docker-compose file. This fille will create two containers, one with the latest MySQL and another one with phpmyadmin. 
-
-```
-docker-compose up
-php artisan key:generate
-php artisan migrate
-php artisan db:seed --class=UserAdminSeeder
-php artisan db:seed --class=customerSeeder
-php artisan db:seed --class=contractsSeeder
-```
