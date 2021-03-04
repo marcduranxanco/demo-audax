@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Contracts extends Model
 {
     use HasFactory;
+    protected $guarded = array();
+
+    public function Customer(){
+        return $this->belongsTo('App\Customer', 'customer_id');
+    }
 }
