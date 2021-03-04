@@ -3,9 +3,8 @@
 @section('content')
 <div class="row">
     <h2>Contracts list</h2>
-    <p>Find by client id</p>
 </div>
-<div class="row">
+<div class="row mt-3">
     <div class="col-sm">
         <select class="form-select" id="customer_id">
         @foreach ($customers as $customer)
@@ -18,7 +17,7 @@
         <button type="button" class="btn btn-secondary" id="reset">Show all</button>
     </div>
 </div>
-<div class="row" id="contracts_div">
+<div class="row mt-3" id="contracts_div">
 
     <table class="table table-bordered" id="contracts_table">
         <tr>
