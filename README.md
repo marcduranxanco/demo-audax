@@ -7,6 +7,7 @@ Marc Duran
 
 This project was made with Laravel. The database can be created with docker with the Docker-compose file. This fille will create two containers, one with the latest MySQL and  one with Phpmyadmin. The ports have to be setted on the .env file. <br/>
 
+# Run the project
 ```
 git clone https://github.com/marcduranxanco/demo-audax.git
 cd demo-audax
