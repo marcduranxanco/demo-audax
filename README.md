@@ -8,14 +8,18 @@ Marc Duran
 :question: Access to the panel when credentials are correct
 :question: Wrong credentials alert when auth fails
 
-#### Creation
-- Using Laravel make:auth as default Bootstrap-based design theme. The ability to register have been removed.
+- Using Laravel make:auth as default Bootstrap-based design theme. I've removed the ability to register.
 
 ```
 composer require laravel/ui
 php artisan ui bootstrap --auth
 php artisan migrate
+php artisan make:seeder UserAdminSeeder
+php artisan db:seed --class=UserAdminSeeder
 ```
+_Default credentials_
+u: `admin@audax.com`
+p: `password`
 
 ### Database Objectives
 :question: The database must be relacional
@@ -33,37 +37,46 @@ Customer DB table consists of these fields:
     · phone
 ```
 
-Use database migrations to create those schema above:
+Using database migrations to create those schema above:
 ```
-php artisan make:migration create_companies_table
-php artisan make:migration create_employees_table
+php artisan make:migration create_contracts_table
+php artisan make:migration create_customers_table
 ...
 php artisan migrate
 ```
-Model creation:
+MODEL CREATION:
 ```
-php artisan make:model Company
-php artisan make:model Employee
+php artisan make:model Contracts
+php artisan make:model Customer
 ```
-Seeding the database.
-Use database seeds to create first user with email admin@admin.com and password “password”
+SEEDING THE DATABASE:
+Using database seeds to create data
 ```
-php artisan make:seeder UserAdminSeeder
+php artisan make:seeder customerSeeder
+php artisan make:seeder contractsSeeder
 ...
-php artisan db:seed --class=UserAdminSeeder
+php artisan db:seed --class=customerSeeder
+php artisan db:seed --class=contractsSeeder
 ```
-
 
 ### Extra objectives
 :question: Bootstrap usage
 
 # Main running commands
 
-`php artisan serve`
 `php artisan key:generate`
+`php artisan serve`
+
 
 # About the project
 
-Project made with Laravel
+This project was made with Laravel. The database could be created with docker with de Docker-compose file. This fille will create two containers, one with the latest MySQL and another one with phpmyadmin. 
 
+```
+docker-compose up
+php artisan key:generate
 php artisan migrate
+php artisan db:seed --class=UserAdminSeeder
+php artisan db:seed --class=customerSeeder
+php artisan db:seed --class=contractsSeeder
+```
