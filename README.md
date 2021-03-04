@@ -59,6 +59,11 @@ php artisan db:seed --class=customerSeeder
 php artisan db:seed --class=contractsSeeder
 ```
 
+### Controllers creation
+```
+php artisan make:controller ContractsController --resource --model=Contracts
+```
+
 ### Extra objectives
 :question: Bootstrap usage
 
