@@ -19,6 +19,8 @@ class ContractsController extends Controller
         ->join('customers', 'customers.id', '=', 'customer_id')
         ->select('contracts.*', 'customers.first_name', 'customers.last_name')
         ->get();
-        return view('contracts.list',compact('contracts_user'));
+        $customers = DB::table('customers')->get();
+
+        return view('contracts.list',compact('contracts_user', 'customers'));
     }
 }
