@@ -5,7 +5,7 @@ Marc Duran
 
 # About the project
 
-This project was made with Laravel. The database could be created with docker with de Docker-compose file. This fille will create two containers, one with the latest MySQL and another one with phpmyadmin. The ports have to be setted on the .env file. 
+This project was made with Laravel. The database can be created with docker with the Docker-compose file. This fille will create two containers, one with the latest MySQL and  one with Phpmyadmin. The ports have to be setted on the .env file. <br/>
 
 ```
 git clone https://github.com/marcduranxanco/demo-audax.git
@@ -20,13 +20,16 @@ php artisan db:seed --class=customerSeeder
 php artisan db:seed --class=contractsSeeder
 php artisan serve
 ```
+### _Default credentials_ <br/>
+u: `admin@audax.com` <br/>
+p: `password` <br/>
 
 ## OBJECTIVES
 
 ### AUTH OBJECTIVES
-:heavy_check_mark: Create login page
-:heavy_check_mark: Access to the panel when credentials are correct
-:heavy_check_mark: Wrong credentials alert when auth fails
+:heavy_check_mark: Create login page<br />
+:heavy_check_mark: Access to the panel when credentials are correct<br />
+:heavy_check_mark: Wrong credentials alert when auth fails<br />
 
 - Using Laravel make:auth as default Bootstrap-based design theme. I've removed the ability to register.
 
@@ -37,13 +40,10 @@ php artisan migrate
 php artisan make:seeder UserAdminSeeder
 php artisan db:seed --class=UserAdminSeeder
 ```
-_Default credentials_
-u: `admin@audax.com`
-p: `password`
 
 ### Database Objectives
-:question: The database must be relacional
-:question: A customer can have 1 to n contracts, but a contract only belongs to one customer
+:heavy_check_mark: The database must be relacional <br/>
+:heavy_check_mark: A customer can have 1 to n contracts, but a contract only belongs to one customer <br/>
 
 #### Database proposal
 ```
@@ -85,9 +85,4 @@ php artisan make:controller ContractsController --resource --model=Contracts
 ```
 
 ### Extra objectives
-:question: Bootstrap usage
-
-# Main running commands
-
-`php artisan key:generate`
-`php artisan serve`
+:heavy_check_mark: Bootstrap usage
